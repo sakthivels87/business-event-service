@@ -1,0 +1,10 @@
+{
+    "trackingid": "c3d2a7e5-5b3e-4b0a-a46b-4c9d32f07c7c",
+    "from": "systemA",
+    "to": "customer",
+    "subject": "Order Placed",
+    "body": "Your order is confirmed",
+    "channel": "email",
+    "priority": "high",
+    "customerid": "CUST1001"
+}
