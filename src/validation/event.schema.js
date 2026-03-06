@@ -1,7 +1,6 @@
 const { z } = require("zod");
 
 const eventSchema = z.object({
-  trackingid: z.string().uuid(),
   from: z.string(),
   to: z.string(),
   subject: z.string(),
