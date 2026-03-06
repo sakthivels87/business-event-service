@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 
 const EventSchema = new mongoose.Schema({
-  trackingid: String,
+  trackingid: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   from: String,
   to: String,
   subject: String,
