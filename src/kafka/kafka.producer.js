@@ -13,7 +13,7 @@ const sendMessage = async (topic, message) => {
     topic,
     messages: [
       {
-        key: message?.customerid,
+        key: message?.customerId,
         value: JSON.stringify(message),
       },
     ],

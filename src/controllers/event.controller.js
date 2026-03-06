@@ -10,7 +10,7 @@ exports.createEvent = async (req, res, next) => {
     const requestBody = eventSchema.parse(req.body);
     const payload = {
       ...requestBody,
-      trackingid: trackingId,
+      trackingId: trackingId,
       status: "RECEIVED",
       statusMessage: "Request received successfully.",
     };
@@ -20,7 +20,6 @@ exports.createEvent = async (req, res, next) => {
     const topic = `priority-${priority}`;
 
     const event = new Event({
-      trackingId,
       ...payload,
       priority,
       status: "QUEUED",
@@ -32,12 +31,12 @@ exports.createEvent = async (req, res, next) => {
     await sendMessage(topic, payload);
 
     logger.info("Event stored and sent to kafka", {
-      trackingid: payload.trackingid,
+      trackingId: payload.trackingId,
     });
 
     res.status(201).json({
       message: "Event accepted",
-      trackingid: payload.trackingid,
+      trackingId: payload.trackingId,
     });
   } catch (error) {
     next(error);

@@ -7,7 +7,7 @@ const eventSchema = z.object({
   body: z.string(),
   channel: z.string(),
   priority: z.enum(["high", "medium", "low"]).optional(),
-  customerid: z.string(),
+  customerId: z.string(),
 });
 
 module.exports = eventSchema;

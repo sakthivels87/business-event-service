@@ -1,18 +1,15 @@
 const mongoose = require("mongoose");
+const { uuid } = require("zod");
 
 const EventSchema = new mongoose.Schema({
-  trackingid: {
-    type: String,
-    required: true,
-    unique: true,
-  },
+  trackingId: String,
   from: String,
   to: String,
   subject: String,
   body: String,
   channel: String,
   priority: String,
-  customerid: String,
+  customerId: String,
   status: {
     type: String,
     default: "QUEUED",

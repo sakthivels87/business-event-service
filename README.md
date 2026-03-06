@@ -98,14 +98,14 @@ POST `/api/v1/events`
 
 ``` json
 {
-  "trackingid": "uuid",
+  "trackingId": "uuid",
   "from": "systemA",
   "to": "customer",
   "subject": "Welcome",
   "body": "Welcome to our service",
   "channel": "email",
   "priority": "high",
-  "customerid": "12345"
+  "customerId": "12345"
 }
 ```
 
@@ -137,14 +137,14 @@ Example document:
 
 ``` json
 {
-  "trackingid": "uuid",
+  "trackingId": "uuid",
   "from": "systemA",
   "to": "customer",
   "subject": "Welcome",
   "body": "Welcome to our service",
   "channel": "email",
   "priority": "high",
-  "customerid": "12345",
+  "customerId": "12345",
   "status": "QUEUED",
   "createdAt": "timestamp"
 }
@@ -255,14 +255,14 @@ Server runs at:
 Example using curl:
 
     curl -X POST http://localhost:3000/api/v1/events -u admin:admin123 -H "Content-Type: application/json" -d '{
-    "trackingid":"123",
+    "trackingId":"123",
     "from":"systemA",
     "to":"customer",
     "subject":"Welcome",
     "body":"Welcome message",
     "channel":"email",
     "priority":"high",
-    "customerid":"12345"
+    "customerId":"12345"
     }'
 
 ------------------------------------------------------------------------
