@@ -7,11 +7,14 @@ const { v4: uuidv4 } = require("uuid");
 exports.createEvent = async (req, res, next) => {
   try {
     const trackingId = uuidv4();
+    const requestBody = eventSchema.parse(req.body);
     const payload = {
-      ...req.body,
+      ...requestBody,
       trackingid: trackingId,
-      status: "QUEUED",
+      status: "RECEIVED",
+      statusMessage: "Request received successfully.",
     };
+
     const priority = payload.priority || "medium";
 
     const topic = `priority-${priority}`;
@@ -21,6 +24,7 @@ exports.createEvent = async (req, res, next) => {
       ...payload,
       priority,
       status: "QUEUED",
+      statusMessage: "Successfully delivered to MongoDB.",
     });
 
     await event.save();
